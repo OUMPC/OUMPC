@@ -76,6 +76,13 @@ window.onload = ()=>{
     initCSS()
     initHeader()   
     initFooter() 
+    // initUp()
+    const upDiv = document.createElement('div');
+    upDiv.id = 'up';
+    const upIcon = document.createElement('i');
+    upIcon.className = 'fa-solid fa-circle-chevron-up';
+    upDiv.appendChild(upIcon);
+    document.body.appendChild(upDiv);
 }
 
 
