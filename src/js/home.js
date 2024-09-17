@@ -51,7 +51,7 @@ async function initPage(){
         coVan.innerHTML = ""
         data.coVan.forEach((e,i)=>{
             coVan.innerHTML += `
-            <li>
+            <li class="">
                 <div class="img">
                     <img src="${e.avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
                 </div>

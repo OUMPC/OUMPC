@@ -50,16 +50,16 @@
     <!--  -->
     <div class="page stage2">
         <div class="container">
-            <div class="tb">
+            <div class="tb wow">
                 <span>GIỚI THIỆU</span>
                 <h2>Câu lạc bộ Lập trình trên thiết bị di động</h2>
                 <p>Trực thuộc khoa Công nghệ thông tin - Trường Đại học Mở Tp.HCM</p>
             </div>
             <div class="tl">
-                <div class="img">
+                <div class="img wow">
                     <img src="./src/asset/image/mpc_meeting1.png" alt="">
                 </div>
-                <div class="tb-r">
+                <div class="tb-r wow">
                     <h2>MPC - Nơi tình thân và đam mê kết nối_</h2>
                     <p>
                         Câu lạc bộ Lập trình trên thiết bị di động (Mobile Programming Club - MPC) là một trong những câu lạc bộ hoạt động năng động, sôi nổi và đầy sáng tạo của Khoa Công nghệ thông tin - Trường Đại học Mở Tp.HCM. MPC được thành lập với mục tiêu tạo ra một môi trường học tập, nghiên cứu và phát triển công nghệ thông tin không chỉ trên thiết bị di động như web, mobile app,... mà còn nhiều ngành phổ biến khác cho sinh viên Khoa CNTT, cũng như các bạn yêu thích lập trình.
@@ -69,46 +69,46 @@
         </div>
 
         <div class="container">
-            <div class="tb">
+            <div class="tb wow">
                 <h2>Cố vấn</h2>
                 <p>Để phát triển thành một CLB vững mạnh và đoàn kết như hiện nay, ngay từ những ngày đầu tiên MPC đã rất may mắn khi nhận được sự hỗ trợ, chỉ dẫn từ các thầy cô cố vấn đã có nhiều năm kinh nghiệm giảng dạy tại khoa CNTT.</p>
             </div>
-            <ul class="l-items" id="coVan">
+            <ul class="l-items wow" id="coVan">
                 <!-- JS -->
             </ul>
         </div>
 
         <div class="container">
-            <div class="tb">
+            <div class="tb wow">
                 <span>ĐIỀU HÀNH</span>
                 <h2>Ban chủ nhiệm</h2>
                 <p>Giới thiệu các thành viên ban chủ nhiệm.</p>
             </div>
-            <div class="three-box" id="chuNhiem">
+            <div class="three-box wow" id="chuNhiem">
                 <!-- JS -->
             </div>
 
-            <div class="tb">
+            <div class="tb wow">
                 <h2>Ban lập trình</h2>
                 <p>Giới thiệu các thành viên ban lập trình.</p>
             </div>
-            <div class="two-box" id="banLT">
+            <div class="two-box wow" id="banLT">
                 <!-- JS -->
             </div>
 
-            <div class="tb">
+            <div class="tb wow">
                 <h2>Ban hậu cần</h2>
                 <p>Giới thiệu các thành viên ban hậu cần.</p>
             </div>
-            <div class="two-box" id="banHC">
+            <div class="two-box wow" id="banHC">
                 <!-- JS               -->
             </div>
 
-            <div class="tb">
+            <div class="tb wow">
                 <h2>Ban truyền thông</h2>
                 <p>Giới thiệu các thành viên ban truyền thông.</p>
             </div>
-            <div class="two-box" id="banTT">
+            <div class="two-box wow" id="banTT">
                   <!-- JS -->
             </div>
         </div>
@@ -116,11 +116,11 @@
 
     <div class="page stage3">
         <div class="container">
-            <div class="tb">
+            <div class="tb wow">
                 <h2>Giải đáp thắc mắc</h2>
                 <p>Dưới đây là những câu hỏi phổ biến thường được các bạn dành cho CLB.</p>
             </div>
-            <ol class="questions">
+            <ol class="questions wow">
                 
                                 
             </ol>
@@ -139,6 +139,23 @@
     </script>
     <script src="./src/js/init.js" defer></script>
     <script src="./src/js/home.js" defer></script>
+    <script defer>
+        const wows = document.querySelectorAll('.wow');
+        const animated=["animate__bounceInDown", "animate__backInDown", "animate__backInLeft", "animate__backInUp","animate__backInUp" ,"animate__lightSpeedInLeft","animate__rotateInUpRight","animate__rollIn","animate__zoomIn","animate__zoomInDown"]
+
+        wows.forEach((wow) => {
+            wow.classList.add(animated[Math.floor(Math.random() * animated.length)]);
+        });
+
+        const wow = new WOW({
+            boxClass:     ['wow','box'],      // default
+            animateClass: 'animate__animated', // default
+            offset:       0,          // default
+            mobile:       true,       // default
+            live:         true        // default
+        })
+        wow.init();
+    </script>
 </body>
 </html>
 
