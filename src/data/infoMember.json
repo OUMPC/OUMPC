@@ -1,0 +1,60 @@
+{
+    "coVan":[
+        {
+            "call":"Thầy",
+            "name": "Dương Hữu Thành",
+            "fb": "",
+            "avatar":null,
+            "bio":"Giảng viên Khoa CNTT"
+        }
+    ],
+    "chuNhiem": [
+        {
+            "name": "Nguyễn Thanh Triều",
+            "fb": "",
+            "avatar":"./src/asset/image/members/trieu.nt.jpg"
+        },
+        {
+            "name": "Võ Thị Huyền",
+            "fb": "",
+            "avatar":"./src/asset/image/members/huyen.vt.jpg"
+        },
+        {}
+    ],
+    "lapTrinh":[
+        {
+            "name": "Phan Lê Hồ",
+            "fb": "",
+            "avatar":"./src/asset/image/members/ho.pl.jpg"
+        },
+        {
+            "name": "Tsàn Quý Thành",
+            "fb": "",
+            "avatar":"./src/asset/image/members/thanh.tq.jpg"
+        }
+    ],
+    "hauCan":[
+        {
+            "name": "Ngô Sài Ủ",
+            "fb": "",
+            "avatar":null
+        },
+        {
+            "name": "Nguyễn Tuấn Kiệt",
+            "fb": "",
+            "avatar":null
+        }
+    ],
+    "truyenThong":[
+        {
+            "name": "Nguyễn Lư Hồng Phương",
+            "fb": "",
+            "avatar":null
+        },
+        {
+            "name": "Nguyễn Thái Bảo",
+            "fb": "",
+            "avatar":null
+        }
+    ]
+}
