@@ -11,7 +11,7 @@ runCaption();
 
 
 async function initQA(){
-    await fetch('./src/data/qa.json')
+    await fetch('/src/data/qa.json')
     .then(res => res.json()).then(data => {
         const questions = document.querySelector('.questions');
         questions.innerHTML = ""
@@ -45,7 +45,7 @@ async function initQA(){
 }
 
 async function initPage(){
-    fetch('./src/data/infoMember.json').then(res => res.json())
+    fetch('/src/data/infoMember.json').then(res => res.json())
     .then(data => {
         const coVan = document.querySelector('#coVan');
         coVan.innerHTML = ""
@@ -53,7 +53,7 @@ async function initPage(){
             coVan.innerHTML += `
             <li class="">
                 <div class="img">
-                    <img src="${e.avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                    <img src="${e.avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
                 </div>
                 <div class="info">
                     <span>${e.call}</span>
@@ -69,7 +69,7 @@ async function initPage(){
         chuNhiem.innerHTML= `
         <div class="box">
             <div class="img">
-                <img src="${data.chuNhiem[1].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.chuNhiem[1].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.chuNhiem[1].name || "Thành viên thứ 2"}</h2>
@@ -78,7 +78,7 @@ async function initPage(){
         </div>
         <div class="box">
             <div class="img">
-                <img src="${data.chuNhiem[0].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.chuNhiem[0].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.chuNhiem[0].name || "Thành viên thứ 1"}</h2>
@@ -87,7 +87,7 @@ async function initPage(){
         </div>
         <div class="box">
             <div class="img">
-                <img src="${data.chuNhiem[2].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.chuNhiem[2].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.chuNhiem[2].name || "Thành viên thứ 3"}</h2>
@@ -99,7 +99,7 @@ async function initPage(){
         banLT.innerHTML= `
         <div class="box">
             <div class="img">
-                <img src="${data.lapTrinh[0].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.lapTrinh[0].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.lapTrinh[0].name || "Thành viên thứ 1"}</h2>
@@ -108,7 +108,7 @@ async function initPage(){
         </div>
         <div class="box">
             <div class="img">
-                <img src="${data.lapTrinh[1].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.lapTrinh[1].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.lapTrinh[1].name || "Thành viên thứ 2"}</h2>
@@ -121,7 +121,7 @@ async function initPage(){
         banHC.innerHTML= `
         <div class="box">
             <div class="img">
-                <img src="${data.hauCan[0].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.hauCan[0].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.hauCan[0].name || "Thành viên thứ 1"}</h2>
@@ -130,7 +130,7 @@ async function initPage(){
         </div>
         <div class="box">
             <div class="img">
-                <img src="${data.hauCan[1].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.hauCan[1].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.hauCan[1].name || "Thành viên thứ 2"}</h2>
@@ -143,7 +143,7 @@ async function initPage(){
         banTT.innerHTML= `
         <div class="box">
             <div class="img">
-                <img src="${data.truyenThong[0].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.truyenThong[0].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.truyenThong[0].name || "Thành viên thứ 1"}</h2>
@@ -152,7 +152,7 @@ async function initPage(){
         </div>
         <div class="box">
             <div class="img">
-                <img src="${data.truyenThong[1].avatar || "./src/asset/image/members/member.png"}" alt="" srcset="">
+                <img src="${data.truyenThong[1].avatar || "/src/asset/image/members/member.png"}" alt="" srcset="">
             </div>
             <div class="info">
                 <h2>${data.truyenThong[1].name || "Thành viên thứ 2"}</h2>

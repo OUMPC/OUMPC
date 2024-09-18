@@ -1,8 +1,8 @@
 const headerHTML = `
 <nav>
     <div class="row-l">
-        <a class="logo" href="./">
-            <img src="./src/asset/image/logo/logo.png" alt="OUMPC">
+        <a class="logo" href="/">
+            <img src="/src/asset/image/logo/logo.png" alt="OUMPC">
             <span>
                 OUMPC
             </span>
@@ -14,23 +14,23 @@ const headerHTML = `
         </div>
         <div class="menu">
             <a class="logo" href="#">
-                <img src="./src/asset/image/logo/logo.png" alt="OUMPC">
+                <img src="/src/asset/image/logo/logo.png" alt="OUMPC">
                 <span>
                     OUMPC
                 </span>
             </a>
             <ul>
                 <li>
-                    <a href="./">Trang chủ</a>
+                    <a href="/">Trang chủ</a>
                 </li>
                 <li>
-                    <a href="./daotao.html">Đào tạo</a>
+                    <a href="/daotao.html">Đào tạo</a>
                 </li>
                 <li>
-                    <a href="./sukien.html">Sự kiện</a>
+                    <a href="/sukien.html">Sự kiện</a>
                 </li>
                 <li>
-                    <a href="./thanhtuu.html">Thành tựu</a>
+                    <a href="/thanhtuu.html">Thành tựu</a>
                 </li>
             </ul>
         </div>
@@ -40,7 +40,7 @@ const headerHTML = `
 const footerHTML = `
 <div class="left">
     <div class="logo">
-        <img src="./src/asset/image/logo/logo.png" alt="">
+        <img src="/src/asset/image/logo/logo.png" alt="">
     </div>
     <p>Mobile Programming Club</p>
     
@@ -139,14 +139,14 @@ function initCSS(){
 
     const linkInit = document.createElement('link');
     linkInit.rel = 'stylesheet';
-    linkInit.href = './src/css/init.css';
+    linkInit.href = '/src/css/init.css';
 
     const style = document.createElement('style');
     style.textContent = "@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');";
 
     const favicon = document.createElement('link');
     favicon.rel = 'icon';
-    favicon.href = './src/asset/image/logo/logo.png';
+    favicon.href = '/src/asset/image/logo/logo.png';
 
     const animateCSS = document.createElement('link');
     animateCSS.rel = 'stylesheet';
