@@ -89,7 +89,8 @@ function initWow(){
     document.body.appendChild(upDiv);
 
     const wows = document.querySelectorAll('.wow');
-    const animated=["animate__bounceInDown", "animate__backInDown", "animate__backInLeft", "animate__backInUp","animate__backInUp" ,"animate__lightSpeedInLeft","animate__rotateInUpRight","animate__rollIn","animate__zoomIn","animate__zoomInDown"]
+    // const animated=["animate__bounceInDown", "animate__backInDown", "animate__backInLeft", "animate__backInUp","animate__backInUp" ,"animate__lightSpeedInLeft","animate__rotateInUpRight","animate__rollIn","animate__zoomIn","animate__zoomInDown"]
+    const animated=["animate__zoomIn","animate__zoomInDown"]
 
     wows.forEach((wow) => {
         wow.classList.add(animated[Math.floor(Math.random() * animated.length)]);
