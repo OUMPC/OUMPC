@@ -6,7 +6,6 @@
 }
 
 
-
 *::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(28, 27, 27, 0.302);
@@ -51,7 +50,7 @@ header {
 }
 
 header *{
-    transition: transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s, left 0.3s;
 }
 
 header nav {
@@ -192,12 +191,13 @@ footer .copy{
         /* display: none; */
         position: fixed;
         top: 0;
-        left: 0;
+        width: 100%;
         bottom: 0;
-        right: 0;
+        left: 100%;
         background-color: rgb(251, 128, 62);
         padding: 10px 0;
-        transform: translateX(100%);
+        /* transform: translateX(100%); */
+        opacity: 0;
     }
 
     header nav .menu ul {
@@ -226,7 +226,8 @@ footer .copy{
 
     header nav .menu.active {
         display: block;
-        transform: translateX(0);
+        left:  0;
+        opacity: 1;
     }
 
     header nav .menu ul li.active a,
