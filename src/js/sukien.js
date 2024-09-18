@@ -1,10 +1,6 @@
 const cursor = document.querySelector('#cursor');
-
-// document.body.addEventListener('mousemove', (e) => {
-    
-// });
-
 const links = document.querySelectorAll('.stage2 .container a');
+
 links.forEach((link) => {
     link.addEventListener('mousemove', (e) => {
         cursor.classList.add('show');
@@ -15,3 +11,4 @@ links.forEach((link) => {
         cursor.classList.remove('show');
     });
 });
+
