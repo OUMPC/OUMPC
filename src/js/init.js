@@ -72,13 +72,13 @@ const footerHTML = `
 `
 
 
-window.onload = ()=>{
+// window.onload = ()=>{
     initCSS()
     initHeader()   
     initFooter() 
     // initUp()
     initWow()
-}
+// }
 
 function initWow(){
     const upDiv = document.createElement('div');
