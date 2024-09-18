@@ -65,7 +65,36 @@
                 </div>
             </div>
         </div>
-
+        <div class="container">
+            <div class="tb wow">
+                <span>Lợi ích</span>
+                <h2>Vào CLB bạn sẽ nhận được gì?</h2>
+                <p>Tham gia CLB, bạn sẽ được hưởng nhiều lợi ích từ việc học tập, nghiên cứu, phát triển công nghệ thông tin, cũng như các hoạt động ngoại khóa, giao lưu học hỏi kinh nghiệm,...</p>
+            </div>
+            <ul class="l-items wow">
+                <li class="item-b">
+                    <div class="icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>Học tập</h3>
+                    <p>Tham gia các buổi workshop, seminar, học tập từ các thầy cô giáo, sinh viên năm cuối, cựu sinh viên,...</p>
+                </li>
+                <li class="item-b">
+                    <div class="icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Giao lưu</h3>
+                    <p>Giao lưu, học hỏi kinh nghiệm từ các bạn đồng môn, cựu sinh viên, các CLB khác,...</p>
+                </li>
+                <li class="item-b">
+                    <div class="icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Kỹ năng mềm</h3>
+                    <p>Phát triển kỹ năng mềm, kỹ năng giao tiếp, làm việc nhóm, quản lý thời gian,...</p>
+                </li>            
+            </ul>
+        </div>
         <div class="container">
             <div class="tb wow">
                 <h2>Cố vấn</h2>
@@ -135,23 +164,7 @@
 
     <script src="./src/js/init.js" defer></script>
     <script src="./src/js/home.js" defer></script>
-    <script defer>
-        const wows = document.querySelectorAll('.wow');
-        const animated=["animate__bounceInDown", "animate__backInDown", "animate__backInLeft", "animate__backInUp","animate__backInUp" ,"animate__lightSpeedInLeft","animate__rotateInUpRight","animate__rollIn","animate__zoomIn","animate__zoomInDown"]
-
-        wows.forEach((wow) => {
-            wow.classList.add(animated[Math.floor(Math.random() * animated.length)]);
-        });
-
-        const wow = new WOW({
-            boxClass:     ['wow','box'],      // default
-            animateClass: 'animate__animated', // default
-            offset:       0,          // default
-            mobile:       true,       // default
-            live:         true        // default
-        })
-        wow.init();
-    </script>
+    
 </body>
 </html>
 

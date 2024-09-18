@@ -77,15 +77,33 @@ window.onload = ()=>{
     initHeader()   
     initFooter() 
     // initUp()
+    initWow()
+}
+
+function initWow(){
     const upDiv = document.createElement('div');
     upDiv.id = 'up';
     const upIcon = document.createElement('i');
     upIcon.className = 'fa-solid fa-circle-chevron-up';
     upDiv.appendChild(upIcon);
     document.body.appendChild(upDiv);
+
+    const wows = document.querySelectorAll('.wow');
+    const animated=["animate__bounceInDown", "animate__backInDown", "animate__backInLeft", "animate__backInUp","animate__backInUp" ,"animate__lightSpeedInLeft","animate__rotateInUpRight","animate__rollIn","animate__zoomIn","animate__zoomInDown"]
+
+    wows.forEach((wow) => {
+        wow.classList.add(animated[Math.floor(Math.random() * animated.length)]);
+    });
+
+    const wow = new WOW({
+        boxClass:     ['wow','box'],      // default
+        animateClass: 'animate__animated', // default
+        offset:       0,          // default
+        mobile:       true,       // default
+        live:         true        // default
+    })
+    wow.init();
 }
-
-
 
 window.onscroll = (e) => {
     const header = document.querySelector('header');

@@ -77,10 +77,11 @@
 }
 
 .tb h2{
-    color: white;
+    color: rgb(255, 118, 5);
     font-size: 2.2rem;
     margin-top: 8px;
     margin-bottom: 16px;
+    border-bottom: rgb(255, 118, 5) 2px solid;
 }
 
 .tb p {
@@ -258,6 +259,25 @@
 .questions li.active .reply{
     margin-top: 1rem;
     height: unset;
+}
+
+.l-items .item-b{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.l-items .item-b .icon{
+    font-size: 2rem;
+    color: white;
+}
+
+.l-items .item-b h3{
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 768px){
