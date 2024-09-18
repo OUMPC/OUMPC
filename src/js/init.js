@@ -24,13 +24,13 @@ const headerHTML = `
                     <a href="/">Trang chủ</a>
                 </li>
                 <li>
-                    <a href="/daotao.html">Đào tạo</a>
+                    <a href="/training.html">Đào tạo</a>
                 </li>
                 <li>
-                    <a href="/sukien.html">Sự kiện</a>
+                    <a href="/events.html">Sự kiện</a>
                 </li>
                 <li>
-                    <a href="/thanhtuu.html">Thành tựu</a>
+                    <a href="/achievements.html">Thành tựu</a>
                 </li>
             </ul>
         </div>
@@ -177,9 +177,9 @@ function initHeader(){
     const a = {
         '/': 0,
         '/index.html': 0,
-        '/daotao.html': 1,
-        '/sukien.html': 2,
-        '/thanhtuu.html': 3
+        '/training.html': 1,
+        '/events.html': 2,
+        '/achievements.html': 3
     }
 
     if (a[window.location.pathname] !== undefined) {
