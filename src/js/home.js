@@ -1,4 +1,4 @@
-const slogans = ["Nơi tình thân và đam mê kết nối", "while (alive) { code(); sleep(); eat();)"];
+const slogans = ["Nơi tình thân và đam mê kết nối", "while (alive) { code(); sleep(); eat();}","Đây không phải là <b>lỗi</b>, đây là một tính năng chưa công bố!","Quy tắc đầu tiên khi viết hàm là nó phải ngắn. Quy tắc thứ hai khi viết hàm là nó phải ngắn hơn nữa","HelloWorld('print')"];
 const slogan = document.querySelector('.title p');
 document.INTERVAL = {
     caption: null
