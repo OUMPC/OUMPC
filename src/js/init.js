@@ -31,10 +31,10 @@ const headerHTML = `
                     <i class="fa-solid fa-chevron-up"></i>
                     <ul>
                         <li>
-                            <a href="event/webdesign.html">WebDesign</a>
+                            <a href="/event/webdesign.html">WebDesign</a>
                         </li>
                         <li>
-                            <a href="event/robocode.html">
+                            <a href="/event/robocode.html">
                                 Robocode
                             </a>
                         </li>
