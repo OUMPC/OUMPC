@@ -88,7 +88,7 @@ const footerHTML = `
     </a>
 </div>
 <div class="copy">
-    <p>© 2021 Mobile Programming Club</p>
+    <p>© 2024 Mobile Programming Club</p>
 </div>
 `
 

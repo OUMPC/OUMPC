@@ -7,7 +7,7 @@ document.INTERVAL = {
 initPage();
 initQA();
 runCaption();
-
+initGyroEvent()
 
 
 async function initQA(){
@@ -166,8 +166,19 @@ async function initPage(){
     .catch(err => console.log(err))
 }
 
+function initGyroEvent() {
+    const bg_ov = document.querySelector('.stage1');
+    const img = document.querySelector('.bg_gyro img');
+    const text = document.querySelector('.bg_gyro .box');
+    bg_ov.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth - 0.5;
+        const y = e.clientY / window.innerHeight - 0.5;
+        text.style.transform = `translate(${x * 100}px, ${y * 100}px)`;
+        img.style.transform = `translate(${x * 30}px, ${y * 50}px) rotateX(${10 * y}deg) rotateY(${10 * x}deg)`;
+    });
+}
 
-
+// Code cũ của Riikon team
 function runCaption() {
     let time = 0
     let title = ""
