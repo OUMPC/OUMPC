@@ -19,15 +19,26 @@ const headerHTML = `
                     OUMPC
                 </span>
             </a>
-            <ul>
+            <ul class="child">
                 <li>
                     <a href="/">Trang chủ</a>
                 </li>
                 <li>
                     <a href="/training.html">Đào tạo</a>
                 </li>
-                <li>
+                <li class="parent">
                     <a href="/events.html">Sự kiện</a>
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <ul>
+                        <li>
+                            <a href="event/webdesign.html">WebDesign</a>
+                        </li>
+                        <li>
+                            <a href="event/robocode.html">
+                                Robocode
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="/achievements.html">Thành tựu</a>
@@ -54,7 +65,7 @@ const footerHTML = `
         <a href="#">Liên hệ</a>
     </p>
 </div>
-<div cla    ss="right">
+<div class="right">
     <p><b>Liên hệ</b></p>
     <p>
         <a href="mailto:it.mpclub@ou.edu.vn">it.mpclub@ou.edu.vn</a>
@@ -65,6 +76,16 @@ const footerHTML = `
     <p>
         <a href="http://it.ou.edu.vn/">Khoa Công nghệ thông tin</a>
     </p>
+</div>
+<div class="social">
+    <a href="https://www.facebook.com/CLBLapTrinhTrenThietBiDiDong" target="_blank">
+        <i class="fab fa-facebook" style="color:#0059ff;"></i>
+        CLB - Lập Trình Trên Thiết Bị Di Động
+    </a>
+    <a href="https://github.com/oumpc" target="_blank">
+        <i class="fab fa-github"></i>
+        OUMPC
+    </a>
 </div>
 <div class="copy">
     <p>© 2021 Mobile Programming Club</p>
@@ -172,18 +193,16 @@ function initHeader(){
         menu.classList.toggle('active');
     });
 
-    const menuItems = document.querySelectorAll('.menu ul li');
-    
-    const a = {
-        '/': 0,
-        '/index.html': 0,
-        '/training.html': 1,
-        '/events.html': 2,
-        '/achievements.html': 3
-    }
 
-    if (a[window.location.pathname] !== undefined) {
-        menuItems[a[window.location.pathname]].classList.add('active');
+    const a = document.querySelectorAll("li a")
+    const ref = location.pathname
+    if (ref!="/") {
+        a.forEach((e,i)=>{
+            if (e.href.includes(ref)) {
+                e.parentElement.classList.add("active")
+            }
+            // console.log(e.href)
+        })
     }
 }
 

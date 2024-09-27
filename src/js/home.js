@@ -1,4 +1,4 @@
-const slogans = ["Nơi tình thân và đam mê kết nối", "while (alive) { code(); sleep(); eat();}","Đây không phải là <b>lỗi</b>, đây là một tính năng chưa công bố!","Quy tắc đầu tiên khi viết hàm là nó phải ngắn. Quy tắc thứ hai khi viết hàm là nó phải ngắn hơn nữa","HelloWorld('print')"];
+const slogans = ["Nơi tình thân và đam mê kết nối", "while (alive) { code(); sleep(); eat();}","Đây không phải là <b>lỗi</b>, đây là một tính năng chưa công bố!","Câu lạc bộ Lập trình trên thiết bị di động (chỉ là một cái tên)","HelloWorld('print')"];
 const slogan = document.querySelector('.title p');
 document.INTERVAL = {
     caption: null
@@ -172,7 +172,7 @@ function runCaption() {
     let time = 0
     let title = ""
     const caption = slogans[Math.floor(Math.random() * slogans.length)]
-    const captionSliced = chunkString(caption,parseInt(caption.length / 20))
+    const captionSliced = chunkString(caption,parseInt(caption.length / 10))
     document.INTERVAL.caption  = setInterval(()=>{
         if (captionSliced.length!=0) {
             title = title + captionSliced[0]

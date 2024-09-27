@@ -19,7 +19,11 @@
             "fb": "",
             "avatar":"./src/asset/image/members/huyen.vt.jpg"
         },
-        {}
+        {
+            "name":"Nguyễn Hữu Khang",
+            "fb":"",
+            "avatar":"./src/asset/image/members/khang.nh.jpg"
+        }
     ],
     "lapTrinh":[
         {

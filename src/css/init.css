@@ -91,13 +91,16 @@ header nav .row-r {
     z-index: 999;
 }
 
-header nav .menu ul {
+header nav .menu>ul {
     display: flex;
     list-style: none;
+    position: relative;
 }
 
 header nav .menu ul li {
     margin-right: 20px;
+    position: relative;
+    cursor: pointer;
 }
 
 header nav .menu ul li a {
@@ -106,8 +109,8 @@ header nav .menu ul li a {
     text-transform: uppercase;
 }
 
-header nav .menu ul li.active a,
-header nav .menu ul li a:hover {
+header nav .menu>ul li.active>a,
+header nav .menu>ul>li>a:hover {
     color: rgb(255, 127, 16);
     text-decoration: none;
 }
@@ -118,7 +121,62 @@ header nav .menu .logo{
 
 header.scroll {
     background-color: rgb(24, 24, 26);
-    }
+}
+
+header ul ul{
+    position: absolute;
+    top: calc(100% + 10px);
+    list-style: none;
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+header ul ul,
+header ul ul *{
+    transition: all 0.5s;
+}
+
+header.scroll ul ul li{
+    background-color: #161618;
+}
+
+
+header ul ul li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    padding-left: 10px;
+}
+
+
+
+header ul ul li:hover a{
+    color: rgb(255, 127, 16)!important;
+}
+
+header ul li.parent::after{
+    content: "";
+    position: absolute;
+    top: 90%;
+    height: calc(15% + 1rem);
+    width: 100%;
+    left: 0;
+}
+
+header ul li.parent:hover ul{
+    display: block;
+    height: 100px;
+}
+
+header.scroll ul li.parent ul{
+    /* background-color: #292929; */
+}
+
+header ul li.parent:hover i{
+    transform: rotate(180deg) ;
+}
 
 footer {
     background-color: rgb(22, 22, 22);
@@ -132,13 +190,18 @@ footer {
     flex-wrap: wrap;
 }
 
+footer *{
+    transition: all 0.3s;
+
+}
+
 footer > div{
     width: 30%;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem 0;
+    padding-top: 2rem;
 }
 
 footer > div b{
@@ -157,6 +220,11 @@ footer .copy{
     width: 100%;
 }
 
+footer a:hover{
+    color: rgb(255, 127, 16);
+    text-decoration: none;
+}
+
 #up{
     position: fixed;
     bottom: 20px;
@@ -171,6 +239,25 @@ footer .copy{
 
 #up.active{
     display: block;
+}
+
+.social{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.social>a{
+    display: inline-block;
+    color: white;
+}
+
+.social>a>i{
+    padding-right: 10px;
 }
 
 /* Responsive */
@@ -200,7 +287,7 @@ footer .copy{
         opacity: 0;
     }
 
-    header nav .menu ul {
+    header nav .menu>ul {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -230,15 +317,51 @@ footer .copy{
         opacity: 1;
     }
 
-    header nav .menu ul li.active a,
-    header nav .menu ul li a:hover {
+    header nav .menu>ul li.active>a,
+    header nav .menu>ul>li a:hover {
         background-color: rgb(255, 255, 255);
         color: rgb(251, 128, 62);
+    }
+
+    header ul i{
+        display: none!important;
+    }
+
+    header ul ul{
+        position: relative;
+        height: auto;
+        overflow: unset;
+        width: 100%;
+    }
+
+    header ul li.parent::after{
+        display: none;
+    }
+    
+    header ul li.parent:hover ul{
+        /* display: block; */
+        height: auto;
+    }
+
+    
+    header ul li.parent li{
+        padding: 0;
+        padding-left: 1rem;
+        background-color: unset;
+    }
+
+    header ul li.parent a{
+        width: 100%;
     }
     
     .container{
         width: 90%;
     }
+
+    header ul ul,
+    header ul ul *{
+    transition: all 0s!important;
+}
 
     footer{
         flex-direction: column;
@@ -246,6 +369,10 @@ footer .copy{
 
     footer > div{
         width: 100%;
+    }
+
+    .social{
+        flex-direction: column;
     }
 }
 
