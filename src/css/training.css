@@ -1,0 +1,58 @@
+#sence1{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#sence1 img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.5);
+    scale: 1.1;
+}
+
+#sence1 .ov{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    padding-left: 10%;
+    padding-top: 60vh;
+}
+
+#sence1 .ov span{
+    font-size: 1.4rem;
+    color: rgb(255, 118, 5);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: rgb(255, 118, 5) 2px solid;
+    width:400px;
+}
+
+#sence1 .ov h1{
+    color: rgb(255, 255, 255);
+    font-size:5rem;
+    margin-top: 8px;
+    margin-bottom: 16px;    
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+#sence1 .ov p{
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    margin-top: 8px;
+    margin-bottom: 16px;    
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    width: 70%;
+}
