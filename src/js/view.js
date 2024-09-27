@@ -130,6 +130,7 @@ imgContainer.addEventListener('wheel', (e) => {
 
 
 
+
 imgContainer.addEventListener('dragover', (e) => {
     e.preventDefault();
 });
