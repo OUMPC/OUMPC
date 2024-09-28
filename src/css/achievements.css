@@ -57,3 +57,185 @@
     width: 70%;
     
 }
+
+/* add css 27/9 */
+/* lich su hinh thanh */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#container{
+    background-color: rgb(6, 24, 42);
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.underline{
+    border-bottom: rgb(255, 118, 5) 2px solid;
+    color: rgb(255, 118, 5);
+    font-size: 2rem;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    width: 50%;
+}
+
+.info {
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+}
+
+.item{
+    display: flex;
+    margin-top: 20px;
+}
+
+.img img{
+    width: 85%;
+    border-radius: 5px;
+    height: 80%;
+}
+
+.item_info{
+    color: white;
+    text-align: justify;
+    margin-left: -40px;
+}
+
+/* thanh tuu */
+
+#achie_detail{
+    display: flex;
+    flex-basis: 33.3333%;
+    gap: 20px;
+}
+
+.info_container{
+    background-color: rgb(247, 106, 6);
+    border-radius: 10px;
+    height: 80%;
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+.info_container img{
+    width: 93%;
+    margin-top: 3%;
+    border-radius: 5px;
+}
+
+.info_detail{
+    text-align: left;
+    padding-left: 3%;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.font_Nunito{
+    font-family: 'Nunito, sans-serif';
+    font-weight: bold;
+}
+
+.info_detail p:last-child{
+    padding-bottom: 10px;
+    font-size: 1em;
+}
+
+/* thanh vien */
+.member-container{
+    display: flex;
+    gap: 30px;
+    /* flex-basis: 33.3333%; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.icon_arrow{
+    font-size: 3.2em;
+    color: white;
+    display: block;
+    font-weight: 900;
+    margin-top: -50px;
+}
+
+.change_size{
+    width: 22%;
+}
+
+.member-container .info_container:nth-child(3){
+    width: 30%;
+}
+
+.member_opacity{
+    opacity: .7;
+}
+
+
+@media  only screen and (max-width:768px) {
+    /* reponsive history */
+    .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .item_info{
+        text-align: left;
+        width: 80%;
+        margin-bottom: 70px;
+    }
+    .item img{
+        margin-bottom: 10px;
+    }
+    /* reponsive Typical Members */
+    i.icon_arrow{
+        display: none;
+    }
+    .member-container{
+        display: flex;
+        gap:0px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+    .info_container
+    {
+        width: 80%;
+        height: 70%;
+    }
+    .member-container .info_container:nth-child(3){
+        width: 80%;
+        height: 70%;
+    }
+    .member_opacity{
+        opacity: 1;
+    }
+    .info_container.change_size{
+        margin-bottom: 15px;
+    }
+    .member-container{
+        margin-bottom: 70px;
+    }
+    /* reponsive achievement */
+    #achie_detail{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    .info_container{
+        margin-bottom: 10px;
+    }
+}
