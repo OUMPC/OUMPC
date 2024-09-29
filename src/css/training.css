@@ -56,3 +56,125 @@
     text-shadow: 2px 2px 2px rgba(0,0,0,.5);
     width: 70%;
 }
+/* ================= */
+
+
+
+.item > h1{
+    font-size: 25px;
+} 
+
+.slide-training {
+    padding: 0 150px;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-training > div{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+ #training-slider >div {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+#training-slider{
+    display: flex;
+    overflow: hidden;
+}
+
+.training-slider-inner{
+    display: flex;
+    width: 100%;
+    
+}
+.item{
+    
+    min-width: 33.33%;
+}
+.item > div {
+    
+    width: 100%;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 127, 16);
+    color: white;
+    border-radius: 10px;
+}
+
+.item.active {
+    padding: 0 10px;
+    opacity: 1;
+    transform: scale(1);
+} 
+
+.item{
+    opacity: 0.6;
+    transform: scale(0.7);
+    transition: all ease 0.7s;
+     
+}
+
+ 
+
+.dieu-huong {
+    font-size: 35px;
+    z-index: 9;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease;
+} 
+
+/* ======== */
+#projects-container{
+    background-color: rgb(22, 22, 22);
+    padding: 0 200px;
+    display: flex;
+    flex-grow: 3;
+    flex-wrap: wrap;
+}
+.project{
+    width: 33.33%;
+    padding: 15px;
+    text-align: left;
+    transition: transform ease 0.4s;
+    
+}
+.project:hover{
+    transform: scale(1.05);
+    
+}
+
+.project > div {
+    background-color: white;
+    /* box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4), -2px -2px 5px rgba(255, 255, 255, 1); */
+    /* border-radius: 15px; */
+}
+.project > div >div{
+    padding: 10px;
+}
+.project img {
+    max-width: 100%;
+    height: auto;
+    /* border-radius: 13px 13px 0 0; */
+}
+
+.line{
+    background-color:rgb(22, 22, 22);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top:130px;
+    padding-bottom:30px;
+    font-size: 50px;
+}
+
