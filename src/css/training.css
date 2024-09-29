@@ -96,7 +96,6 @@
     
 }
 .item{
-    
     min-width: 33.33%;
 }
 .item > div {
@@ -147,13 +146,12 @@
     width: 33.33%;
     padding: 15px;
     text-align: left;
-    transition: transform ease 0.4s;
-    
+    transition: transform ease 0.4s; 
 }
 .project:hover{
     transform: scale(1.05);
-    
 }
+
 
 .project > div {
     background-color: white;
@@ -164,7 +162,7 @@
     padding: 10px;
 }
 .project img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     /* border-radius: 13px 13px 0 0; */
 }
@@ -178,3 +176,28 @@
     font-size: 50px;
 }
 
+@media screen and (max-width: 768px){
+    .project{
+        width: 100%; 
+    }
+    .item{
+        min-width: 100%;
+    
+    }
+    .slide-training{
+        padding: 0 90px;
+    }
+    .dieu-huong{
+        padding: 0 15px;
+    }
+    .item > div{
+        height: 530px;
+    }
+    #projects-container{
+        padding: 0 100px;
+    
+    }
+    .project.scale-up{
+        transform: scale(1.06);
+    }
+}

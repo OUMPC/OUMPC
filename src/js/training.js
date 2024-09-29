@@ -13,64 +13,127 @@ function initGyroBGEvent() {
 initGyroBGEvent();
 // =============================
 
-const items = document.querySelectorAll('.item');
-const slider = document.querySelector('.training-slider-inner');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-let currentItem = -1;
 
-nextBtn.addEventListener('click', function() {
-    if (currentItem < items.length - 2){
-        currentItem = (currentItem + 1);
-        updateItems();
+if (window.innerWidth <= 768) {
+    const items = document.querySelectorAll('.item');
+    const slider = document.querySelector('.training-slider-inner');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    let currentItem = 0;
+    
+    nextBtn.addEventListener('click', function() {
+        if (currentItem < items.length-1){
+            currentItem = (currentItem + 1);
+            updateItems();
+        }
+    });
+    prevBtn.addEventListener('click', function() {
+        if(currentItem>0){
+            currentItem = (currentItem - 1);
+            updateItems();
+        }
+    });
+    function updateItems() {
+        items.forEach((item) => {
+            item.classList.add('active');
+        });
+        const offset = -currentItem * 100; 
+        slider.style.transform = `translateX(${offset}%)`;
+    }
+    updateItems();
+    //=========
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
     
-});
-document.addEventListener('keydown', function(event) {
-    if (prevBtn.getBoundingClientRect().top >= 0 && prevBtn.getBoundingClientRect().bottom <= window.innerHeight){
-        if (event.key === 'ArrowRight') {
-            if (currentItem < items.length - 2){
-                currentItem = (currentItem + 1);
-                updateItems();
+    function scaleElementOnScroll() {
+        const element = document.querySelectorAll('#projects-container > .project');
+        for(e of element)
+        {
+            if (isElementInViewport(e)) {
+                e.classList.add('scale-up');
+            } else {
+                e.classList.remove('scale-up');
             }
         }
-    }
-});
+        }
+        
+    
+    // Kiểm tra khi cuộn trang
+    window.addEventListener('scroll', scaleElementOnScroll);
+    
+    // Kiểm tra ngay khi tải trang
+    window.addEventListener('load', scaleElementOnScroll);
+    
+    // Khởi tạo trạng thái ban đầu
+    
+}
+else{
+    const items = document.querySelectorAll('.item');
+    const slider = document.querySelector('.training-slider-inner');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    let currentItem = -1;
 
-prevBtn.addEventListener('click', function() {
+    nextBtn.addEventListener('click', function() {
+        if (currentItem < items.length - 2){
+            currentItem = (currentItem + 1);
+            updateItems();
+        }
+        
+    });
+    document.addEventListener('keydown', function(event) {
+        if (prevBtn.getBoundingClientRect().top >= 0 && prevBtn.getBoundingClientRect().bottom <= window.innerHeight){
+            if (event.key === 'ArrowRight') {
+                if (currentItem < items.length - 2){
+                    currentItem = (currentItem + 1);
+                    updateItems();
+                }
+            }
+        }
+    });
+
+    prevBtn.addEventListener('click', function() {
     if(currentItem>-1){
         currentItem = (currentItem - 1);
         updateItems();
     }
-});
+    });
 
-document.addEventListener('keydown', function(event) {
-    if (prevBtn.getBoundingClientRect().top >= 0 && prevBtn.getBoundingClientRect().bottom <= window.innerHeight){
-        if (event.key === 'ArrowLeft') {
-            if(currentItem>-1){
-                currentItem = (currentItem - 1);
-                updateItems();
+    document.addEventListener('keydown', function(event) {
+        if (prevBtn.getBoundingClientRect().top >= 0 && prevBtn.getBoundingClientRect().bottom <= window.innerHeight){
+            if (event.key === 'ArrowLeft') {
+                if(currentItem>-1){
+                    currentItem = (currentItem - 1);
+                    updateItems();
+                }
             }
         }
-    }
-});
-
-
-
-function updateItems() {
-    items.forEach((item, index) => {
-        item.classList.remove('active');
-    
-        if (index === currentItem+1) {
-            item.classList.add('active');
-        } 
     });
-    const offset = -currentItem/3 * 100; 
-    slider.style.transform = `translateX(${offset}%)`;
+
+
+    function updateItems() {
+        items.forEach((item, index) => {
+            item.classList.remove('active');
+        
+            if (index === currentItem+1) {
+                item.classList.add('active');
+            } 
+        });
+        const offset = -currentItem/3 * 100; 
+        slider.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Khởi tạo trạng thái ban đầu
+    updateItems();
 }
 
-// Khởi tạo trạng thái ban đầu
-updateItems();
 
 //==================json=======
 fetch('src/data/projects.json')
@@ -95,3 +158,6 @@ fetch('src/data/projects.json')
         });
     })
     .catch(error => console.error('Error fetching the JSON file:', error));
+
+// ============
+
