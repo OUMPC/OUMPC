@@ -21,7 +21,7 @@ if (window.innerWidth <= 768) {
     const prevBtn = document.getElementById('prevBtn');
     let currentItem = 0;
      let startX;
-    const threshold = 50; 
+    const threshold = 200; 
     const carousel = document.querySelector('.slide-training');
     
     nextBtn.addEventListener('click', function() {
