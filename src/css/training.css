@@ -182,13 +182,19 @@
     }
     .item{
         min-width: 100%;
-    
     }
     .slide-training{
+        width: 100%;
         padding: 0 9%;
     }
+    .training-slider{
+        width: 100%;
+    }
+    .training-slider-inner{
+        width: 100%;
+    }
     .dieu-huong{
-        padding: 0 15px;
+        padding: 0 1%
     }
     .item > div{
         height: 530px;
