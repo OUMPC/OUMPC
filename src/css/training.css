@@ -158,7 +158,7 @@
     flex-wrap: wrap;
 }
 .project{
-    transform: scale(1);
+    transform: scale(0.8);
     width: 33.33%;
     padding: 15px;
     text-align: left;
