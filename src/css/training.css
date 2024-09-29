@@ -257,7 +257,7 @@
         transform: translateX(-26%);
     }
     .line-image > div >div{
-        font-size: 200%;
+        font-size: 300%;
     }
     .arrow{
         display: flex !important;
