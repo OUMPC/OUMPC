@@ -20,9 +20,6 @@ if (window.innerWidth <= 768) {
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     let currentItem = 0;
-     let startX;
-    const threshold = 200; 
-    const carousel = document.querySelector('.slide-training');
     
     nextBtn.addEventListener('click', function() {
         if (currentItem < items.length-1){
@@ -44,30 +41,54 @@ if (window.innerWidth <= 768) {
         slider.style.transform = `translateX(${offset}%)`;
     }
     updateItems();
-    //=====
-    carousel.addEventListener('touchstart', (event) => {
-        startX = event.touches[0].clientX;
-    });
-    carousel.addEventListener('touchmove', (event) => {
-        const moveX = event.touches[0].clientX;
-        const diffX = startX - moveX;
-    
-        // Nếu người dùng lướt quá ngưỡng
-        if (Math.abs(diffX) > threshold) {
-            if (diffX < 0) {
-                if (currentItem > 0){
-                    currentItem = (currentItem -1);
-                    updateItems();
-                }
-            } else {
-                if (currentItem < items.length-1){
-                    currentItem = (currentItem + 1);
-                    updateItems();
-                }
+
+    let startX;
+let isSwiping = false; 
+const threshold = 50;
+
+const carousel = document.querySelector('.slide-training');
+
+carousel.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+    isSwiping = true; 
+}, { passive: false }); 
+
+carousel.addEventListener('touchmove', (event) => {
+    if (!isSwiping) return; 
+
+    const moveX = event.touches[0].clientX;
+    const diffX = startX - moveX;
+
+   
+    // if (Math.abs(diffX) > threshold) {
+    //     event.preventDefault(); 
+    // }
+}, { passive: false }); 
+
+
+
+carousel.addEventListener('touchend', (event) => {
+    if (!isSwiping) return; 
+
+    const endX = event.changedTouches[0].clientX;
+    const diffX = startX - endX;
+
+    if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+            if (currentItem < items.length - 1) {
+                currentItem++;
             }
-            updateItems();
+        } else {
+            if (currentItem > 0) {
+                currentItem--;
+            }
         }
-    });
+        updateItems(); 
+    }
+
+    isSwiping = false;
+});
+
     //=========
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();

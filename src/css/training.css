@@ -195,7 +195,7 @@
         width: 100%;
     }
     .dieu-huong{
-        padding: 0 1%
+        display: none !important;
     }
     .item > div{
         height: 530px;
