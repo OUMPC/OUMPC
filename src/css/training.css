@@ -186,7 +186,7 @@
     }
     .slide-training{
         
-        padding: 0 9%;
+        padding: 0 2%;
     }
     .training-slider{
         width: 100%;
@@ -198,7 +198,7 @@
         display: none !important;
     }
     .item > div{
-        height: 480px;
+        height: 430px;
     }
     #projects-container{
         padding: 0 10%;
