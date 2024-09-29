@@ -262,4 +262,7 @@
     .arrow{
         display: flex !important;
     }
+    .line-image{
+        height: 300px;
+    }
 }
