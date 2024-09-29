@@ -63,15 +63,18 @@
 .item > h1{
     font-size: 25px;
 } 
-#arrow{
-    position: absolute;
-    top: 190px;
-    width: 130px;
-    left: 50%;
-    transform: translateX(-60%);
+.arrow{
+    position: absolute !important;
+    width: 100px !important;
     opacity: 1;
     z-index: 1;
     transition: opacity 0.5s ease;
+}
+#arrow-bottom{
+    top: 190px;
+}
+#arrow-top{
+    top: -70px;
 }
 .slide-training {
     position: relative;
@@ -209,7 +212,7 @@
 .line-image > div >div{
     color: white;
     z-index: 1;
-    font-size: 200px;
+    font-size: 900%;
 }
 
 

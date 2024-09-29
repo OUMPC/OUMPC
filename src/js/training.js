@@ -208,16 +208,22 @@ fetch('src/data/projects.json')
     .catch(error => console.error('Error fetching the JSON file:', error));
 
 // ============
-    const hiddenElement = document.querySelector('#arrow');
+    const hiddenElement = document.querySelectorAll('.arrow');
 
+    for(let i of hiddenElement){
+        i.classList.remove('hidden');
+    }
     
-    hiddenElement.classList.remove('hidden');
 
     function hideElementOnTouch() {
-        hiddenElement.style.opacity = '0'; 
-        setTimeout(() => {
-            hiddenElement.style.display = 'none'; 
-        }, 500);
+        for(let hi of hiddenElement)
+        {
+            hi.style.opacity = '0'; 
+            setTimeout(() => {
+            hi.style.display = 'none'; 
+            }, 500);
+        }
+        
     }
 
     // Thêm sự kiện chạm vào phần tử
