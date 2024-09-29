@@ -208,3 +208,18 @@ fetch('src/data/projects.json')
     .catch(error => console.error('Error fetching the JSON file:', error));
 
 // ============
+    const hiddenElement = document.querySelector('#arrow');
+
+    
+    hiddenElement.classList.remove('hidden');
+
+    function hideElementOnTouch() {
+        hiddenElement.style.opacity = '0'; 
+        setTimeout(() => {
+            hiddenElement.style.display = 'none'; 
+        }, 500);
+    }
+
+    // Thêm sự kiện chạm vào phần tử
+    document.querySelector('#period-training > div').addEventListener('touchstart', hideElementOnTouch);
+    
