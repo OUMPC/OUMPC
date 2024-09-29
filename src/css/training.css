@@ -158,7 +158,6 @@
     flex-wrap: wrap;
 }
 .project{
-    transform: scale(0.9);
     width: 33.33%;
     padding: 15px;
     text-align: left;
@@ -244,6 +243,12 @@
         padding: 0 5%;
         
     
+    }
+    .project{
+        transform: scale(0.9);
+    }
+    .project:hover{
+        transform: scale(0.9);
     }
     .project.scale-up{
         transform: scale(1.08);
