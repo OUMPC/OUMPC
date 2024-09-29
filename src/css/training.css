@@ -165,7 +165,7 @@
     transition: transform ease 0.4s; 
 }
 .project:hover{
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 
@@ -241,23 +241,23 @@
         height: 430px;
     }
     #projects-container{
-        padding: 0 10%;
+        padding: 0 5%;
+        
     
     }
     .project.scale-up{
-        transform: scale(1.1);
+        transform: scale(1.08);
     }
     .line-image img{
         height: 100%;
         width: auto;
         position: fixed;
         top: 0;
-        left: -50000;
         z-index: -5;
         transform: translateX(-26%);
     }
     .line-image > div >div{
-        font-size: 500%;
+        font-size: 200%;
     }
     .arrow{
         display: flex !important;
