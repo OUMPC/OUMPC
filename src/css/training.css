@@ -64,6 +64,7 @@
     font-size: 25px;
 } 
 .arrow{
+    display: none !important;
     position: absolute !important;
     width: 100px !important;
     opacity: 1;
@@ -212,7 +213,7 @@
 .line-image > div >div{
     color: white;
     z-index: 1;
-    font-size: 900%;
+    font-size: 800%;
 }
 
 
@@ -224,7 +225,7 @@
         min-width: 100%;
     }
     .slide-training{
-        padding-bottom: 12% !important;
+        padding-bottom: 15% !important;
         padding: 0 3%;
     }
     .training-slider{
@@ -255,5 +256,10 @@
         z-index: -5;
         transform: translateX(-26%);
     }
-
+    .line-image > div >div{
+        font-size: 500%;
+    }
+    .arrow{
+        display: flex !important;
+    }
 }

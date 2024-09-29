@@ -11,8 +11,8 @@ function initGyroBGEvent() {
     });
 }
 initGyroBGEvent();
-// =============================
 
+// ============RESPONSIVE=================
 
 if (window.innerWidth <= 768) {
     const items = document.querySelectorAll('.item');
@@ -21,18 +21,6 @@ if (window.innerWidth <= 768) {
     const prevBtn = document.getElementById('prevBtn');
     let currentItem = 0;
     
-    nextBtn.addEventListener('click', function() {
-        if (currentItem < items.length-1){
-            currentItem = (currentItem + 1);
-            updateItems();
-        }
-    });
-    prevBtn.addEventListener('click', function() {
-        if(currentItem>0){
-            currentItem = (currentItem - 1);
-            updateItems();
-        }
-    });
     function updateItems() {
         items.forEach((item) => {
             item.classList.add('active');
@@ -43,31 +31,26 @@ if (window.innerWidth <= 768) {
     updateItems();
 
     let startX;
-let isSwiping = false; 
-const threshold = 50;
+    let isSwiping = false; 
+    const threshold = 50;
 
-const carousel = document.querySelector('.slide-training');
+    const carousel = document.querySelector('.slide-training');
 
-carousel.addEventListener('touchstart', (event) => {
-    startX = event.touches[0].clientX;
-    isSwiping = true; 
-}, { passive: false }); 
+    carousel.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+        isSwiping = true; 
+    }, { passive: false }); 
 
-carousel.addEventListener('touchmove', (event) => {
-    if (!isSwiping) return; 
+    carousel.addEventListener('touchmove', (event) => {
+        if (!isSwiping) return; 
 
-    const moveX = event.touches[0].clientX;
-    const diffX = startX - moveX;
-
-   
-    // if (Math.abs(diffX) > threshold) {
-    //     event.preventDefault(); 
-    // }
-}, { passive: false }); 
+        const moveX = event.touches[0].clientX;
+        const diffX = startX - moveX;
+    }, { passive: false }); 
 
 
 
-carousel.addEventListener('touchend', (event) => {
+    carousel.addEventListener('touchend', (event) => {
     if (!isSwiping) return; 
 
     const endX = event.changedTouches[0].clientX;
@@ -89,7 +72,7 @@ carousel.addEventListener('touchend', (event) => {
     isSwiping = false;
 });
 
-    //=========
+    //==========scale projects=========
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -111,18 +94,34 @@ carousel.addEventListener('touchend', (event) => {
             }
         }
         }
-        
-    
-    // Kiểm tra khi cuộn trang
     window.addEventListener('scroll', scaleElementOnScroll);
-    
-    // Kiểm tra ngay khi tải trang
     window.addEventListener('load', scaleElementOnScroll);
+
+    // ==============2 mũi tên lướt training==============
+    const hiddenElement = document.querySelectorAll('.arrow');
+
+    for(let i of hiddenElement){
+        i.classList.remove('hidden');
+    }
     
-    // Khởi tạo trạng thái ban đầu
+
+    function hideElementOnTouch() {
+        for(let hi of hiddenElement)
+        {
+            hi.style.opacity = '0'; 
+            setTimeout(() => {
+            hi.style.display = 'none'; 
+            }, 500);
+        }
+        
+    }
+
+    document.querySelector('#period-training > div').addEventListener('touchstart', hideElementOnTouch);
     
 }
-else{
+else{//Desktop
+
+    //=================điều hướng training============
     const items = document.querySelectorAll('.item');
     const slider = document.querySelector('.training-slider-inner');
     const nextBtn = document.getElementById('nextBtn');
@@ -178,54 +177,31 @@ else{
         slider.style.transform = `translateX(${offset}%)`;
     }
 
-    // Khởi tạo trạng thái ban đầu
     updateItems();
 }
 
 
-//==================json=======
-fetch('src/data/projects.json')
-    .then(response => response.json())
-    .then(projects => {
-        const projectsContainer = document.getElementById('projects-container');
+//==================đọc json======================
+    fetch('src/data/projects.json')
+        .then(response => response.json())
+        .then(projects => {
+            const projectsContainer = document.getElementById('projects-container');
 
-        projects.forEach(project => {
-            const projectDiv = document.createElement('div');
-            projectDiv.className = 'project';
-            projectDiv.innerHTML = `
-                <div>
-                    <img src="${project.image}" alt="${project.description}"/>
+            projects.forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project';
+                projectDiv.innerHTML = `
                     <div>
-                        <h3>${project.author}</h3>
-                        <p>${project.description}</p>
-                        <a href="${project.url}" target="_blank">Xem thêm</a>
+                        <img src="${project.image}" alt="${project.description}"/>
+                        <div>
+                            <h3>${project.author}</h3>
+                            <p>${project.description}</p>
+                            <a href="${project.url}" target="_blank">Xem thêm</a>
+                        </div>
                     </div>
-                </div>
-                `;
-            projectsContainer.appendChild(projectDiv);
-        });
-    })
-    .catch(error => console.error('Error fetching the JSON file:', error));
+                    `;
+                projectsContainer.appendChild(projectDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching the JSON file:', error));
 
-// ============
-    const hiddenElement = document.querySelectorAll('.arrow');
-
-    for(let i of hiddenElement){
-        i.classList.remove('hidden');
-    }
-    
-
-    function hideElementOnTouch() {
-        for(let hi of hiddenElement)
-        {
-            hi.style.opacity = '0'; 
-            setTimeout(() => {
-            hi.style.display = 'none'; 
-            }, 500);
-        }
-        
-    }
-
-    // Thêm sự kiện chạm vào phần tử
-    document.querySelector('#period-training > div').addEventListener('touchstart', hideElementOnTouch);
-    
