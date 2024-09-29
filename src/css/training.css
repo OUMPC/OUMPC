@@ -143,6 +143,7 @@
     flex-wrap: wrap;
 }
 .project{
+    transform: scale(1);
     width: 33.33%;
     padding: 15px;
     text-align: left;
@@ -184,7 +185,7 @@
         min-width: 100%;
     }
     .slide-training{
-        width: 100%;
+        
         padding: 0 9%;
     }
     .training-slider{

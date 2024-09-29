@@ -20,6 +20,9 @@ if (window.innerWidth <= 768) {
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     let currentItem = 0;
+     let startX;
+    const threshold = 50; 
+    const carousel = document.querySelector('.slide-training');
     
     nextBtn.addEventListener('click', function() {
         if (currentItem < items.length-1){
@@ -41,6 +44,30 @@ if (window.innerWidth <= 768) {
         slider.style.transform = `translateX(${offset}%)`;
     }
     updateItems();
+    //=====
+    carousel.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+    });
+    carousel.addEventListener('touchmove', (event) => {
+        const moveX = event.touches[0].clientX;
+        const diffX = startX - moveX;
+    
+        // Nếu người dùng lướt quá ngưỡng
+        if (Math.abs(diffX) > threshold) {
+            if (diffX < 0) {
+                if (currentItem > 0){
+                    currentItem = (currentItem -1);
+                    updateItems();
+                }
+            } else {
+                if (currentItem < items.length-1){
+                    currentItem = (currentItem + 1);
+                    updateItems();
+                }
+            }
+            updateItems();
+        }
+    });
     //=========
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
@@ -160,4 +187,3 @@ fetch('src/data/projects.json')
     .catch(error => console.error('Error fetching the JSON file:', error));
 
 // ============
-
