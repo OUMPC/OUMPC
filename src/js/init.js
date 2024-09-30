@@ -64,6 +64,7 @@ const footerHTML = `
     <p>
         <a href="#">Liên hệ</a>
     </p>
+    <iframe src="https://visitor-badge.lithub.cc/badge?page_id=oumpc.itoumpc&left_color=161616&right_color=fe9004&left_text=L%C6%B0%E1%BB%A3t%20truy%20c%E1%BA%ADp" width="100%" height="30" frameborder="0" scrolling="no" style="margin: auto; display: block; width: 100px; height: 30px;"></iframe>
 </div>
 <div class="right">
     <p><b>Liên hệ</b></p>
@@ -90,6 +91,7 @@ const footerHTML = `
 <div class="copy">
     <p>© 2024 Mobile Programming Club</p>
 </div>
+
 `
 
 
