@@ -163,6 +163,10 @@
     margin-bottom: 50px;
 }
 
+.info_container{
+    transition: width 0.8s, height 0.8s, transform 0.8s;
+}
+
 .icon_arrow{
     font-size: 3.2em;
     color: white;
@@ -179,7 +183,7 @@
     width: 30%;
 }
 
-.member_opacity{
+.member-container .info_container:nth-child(2), .member-container .info_container:nth-child(4){
     opacity: .7;
 }
 
@@ -199,36 +203,26 @@
     .item img{
         margin-bottom: 10px;
     }
+
     /* reponsive Typical Members */
-    i.icon_arrow{
+    .member-container .info_container.change_size:nth-child(2), 
+    .member-container .info_container.change_size:nth-child(4){
         display: none;
     }
-    .member-container{
-        display: flex;
-        gap:0px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 0px;
+    .member-container .info_container:nth-child(3){
+        width: 100%;
     }
     .info_container
     {
-        width: 80%;
-        height: 70%;
+        width: 100%;
     }
-    .member-container .info_container:nth-child(3){
-        width: 80%;
-        height: 70%;
+    .icon_arrow{
+        margin-top: 0px;
     }
-    .member_opacity{
-        opacity: 1;
+    .info_detail{
+        display: block;
     }
-    .info_container.change_size{
-        margin-bottom: 15px;
-    }
-    .member-container{
-        margin-bottom: 70px;
-    }
+
     /* reponsive achievement */
     #achie_detail{
         flex-direction: column;

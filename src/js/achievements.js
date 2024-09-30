@@ -11,3 +11,33 @@ function initGyroBGEvent() {
 }
 
 initGyroBGEvent()
+
+// 30/9
+
+const members = document.querySelector(".member-container")
+const iconLeft = document.querySelector(".member-container :nth-child(1)")
+const iconRight = document.querySelector(".member-container :nth-child(5)")
+
+iconLeft.addEventListener('click', function(){
+    var box2 = document.querySelector(".member-container :nth-child(3)")
+    members.removeChild(box2)
+    members.insertBefore(box2,document.querySelector(".member-container :nth-child(4)"))
+    box2 = document.querySelector(".member-container :nth-child(3)")
+    members.removeChild(box2)
+    members.insertBefore(box2,document.querySelector(".member-container :nth-child(2)"))
+})
+
+// iconRight.addEventListener('click', function(){
+//     const box1 = document.querySelector(".member-container :nth-child(2)")
+//     members.removeChild(box1)
+//     members.insertBefore(box1,document.querySelector(".member-container :nth-child(4)"))
+// })
+
+iconRight.addEventListener('click', function(){
+    var box2 = document.querySelector(".member-container :nth-child(3)")
+    members.removeChild(box2)
+    members.insertBefore(box2,document.querySelector(".member-container :nth-child(2)"))
+    box2 = document.querySelector(".member-container :nth-child(3)")
+    members.removeChild(box2)
+    members.insertBefore(box2,document.querySelector(".member-container :nth-child(4)"))
+})
