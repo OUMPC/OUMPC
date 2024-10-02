@@ -164,7 +164,7 @@
 }
 
 .info_container{
-    transition: width 0.8s, height 0.8s, transform 0.8s;
+    transition: width 0.5s, height 0.5s, transform 0.8s;
 }
 
 .icon_arrow{
@@ -222,6 +222,9 @@
     .info_detail{
         display: block;
     }
+    /* .info_container.change_size{
+        animation: slideRight 0.5s ease-out forwards;
+    } */
 
     /* reponsive achievement */
     #achie_detail{
@@ -231,5 +234,23 @@
     }
     .info_container{
         margin-bottom: 10px;
+    }
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0);
     }
 }
