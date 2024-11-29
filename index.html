@@ -16,30 +16,25 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="OUMPC">
     <meta property="og:locale" content="vi_VN">
-    
+    <link rel="stylesheet" href="src/css/slider.css">
 </head>
 <body>
     <script src="/src/js/loading.js" defer></script>
     <header></header>
-    <!-- <div id="tuyenthanhvien">
-        <div class="bg-1">
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-        </div>
+    <div id="tuyenthanhvien">
+        <canvas id="backgroundCanvas"></canvas>
         <div class="popup">
             <h1>Tuyển thành viên</h1>
             <p>CLB Lập trình trên thiết bị di động chuẩn bị mở đơn tuyển thành viên năm 2024.</p>
             <p><b>Đối tượng: </b>Sinh viên các ngành thuộc Khoa CNTT hoặc các bạn có đam mê về lập trình.</p>
             <p><b>Thời gian ứng tuyển: </b><b>xx/xx/2024 - xx/xx/2024</b></p>
-            <div class="container">
-                <button class="btn-dk" onclick="document.location.href='/src/html/register.html'">Đăng ký</button>
-                <button class="btn-fb" onclick="document.location.href='/src/html/register.html'">Xem thêm</button>
+            <div class="btn-container">
+                <button class="btn btn-dk" onclick="document.location.href='/src/html/register.html'">Đăng ký</button>
+                <button class="btn btn-fb" onclick="document.location.href='/src/html/register.html'">Xem thêm</button>
             </div>
         </div>
 
-    </div> -->
+    </div>
     <div class="bg bg_gyro">
         <img src="/src/asset/image/MPC_page-0002.jpg" alt="">
         <div class="box">
@@ -162,6 +157,21 @@
                   <!-- JS -->
             </div>
         </div>
+
+        <div class="container">
+            <div class="tb wow">
+                <h2>Một số hình ảnh</h2>
+                <div class="slider" id="wd_common">
+                    
+                    
+                    <div class="next"></div>
+                    <div class="prev"></div>
+                    <div class="dots">
+                        
+                    </div>                  
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="page stage3">
@@ -187,7 +197,77 @@
 
     <script src="/src/js/init.js" defer></script>
     <script src="/src/js/home.js" defer></script>
-    
+    <script src="/src/js/slider.js" defer></script>
+    <script src="/src/js/view.js" defer></script>
+    <script>
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const balls = [];
+        const numBalls = 50;
+
+        for (let i = 0; i < numBalls; i++) {
+            balls.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                dx: (Math.random() - 0.5) * 4,
+                dy: (Math.random() - 0.5) * 4,
+                radius: Math.random() * 20 + 10,
+                color: `hsl(${Math.random() * 360}, 50%, 50%)`
+            });
+        }
+
+        function drawBall(ball) {
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fillStyle = ball.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function updateBall(ball) {
+            ball.x += ball.dx;
+            ball.y += ball.dy;
+
+            if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
+                ball.dx = -ball.dx;
+            }
+
+            if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+                ball.dy = -ball.dy;
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            balls.forEach(ball => {
+                drawBall(ball);
+                updateBall(ball);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });                                                                 
+    </script>
+    <script>
+        const today = new Date();
+        const start = new Date(today.getFullYear(), 10, 30); // November 30
+        const end = new Date(today.getFullYear(), 11, 8); // December 8
+
+        if (today < start || today > end) {
+            document.getElementById('tuyenthanhvien').remove();
+        }
+    </script>
 </body>
 </html>
 

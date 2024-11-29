@@ -31,6 +31,7 @@ a{
 
 body {
     font-family: "Nunito", sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -241,7 +242,7 @@ footer a:hover{
     display: block;
 }
 
-.social{
+footer .social{
     display: flex;
     gap: 20px;
     width: 100%;
@@ -371,7 +372,7 @@ footer a:hover{
         width: 100%;
     }
 
-    .social{
+    footer .social{
         flex-direction: column;
     }
 }

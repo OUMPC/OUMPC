@@ -4,10 +4,6 @@ document.INTERVAL = {
     caption: null
 }
 
-initPage();
-initQA();
-runCaption();
-initGyroEvent()
 
 
 async function initQA(){
@@ -74,6 +70,10 @@ async function initPage(){
             <div class="info">
                 <h2>${data.chuNhiem[1].name || "Thành viên thứ 2"}</h2>
                 <p>Phó chủ nhiệm</p>
+                <div class="social">                    
+                    <a target="_blank" rel="noopener noreferrer" href="${data.chuNhiem[1].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" rel="noopener noreferrer" href="mailto:${data.chuNhiem[1].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
+                </div>
             </div>
         </div>
         <div class="box">
@@ -84,6 +84,10 @@ async function initPage(){
                 <h2>${data.chuNhiem[0].name || "Thành viên thứ 1"}</h2>
                 <p>Chủ nhiệm</p>
             </div>
+            <div class="social">                    
+                <a target="_blank" rel="noopener noreferrer" href="${data.chuNhiem[0].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.chuNhiem[0].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
+            </div>
         </div>
         <div class="box">
             <div class="img">
@@ -92,6 +96,10 @@ async function initPage(){
             <div class="info">
                 <h2>${data.chuNhiem[2].name || "Thành viên thứ 3"}</h2>
                 <p>Phó chủ nhiệm</p>
+            </div>
+            <div class="social">                    
+                <a target="_blank" rel="noopener noreferrer" href="${data.chuNhiem[2].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.chuNhiem[2].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
         `
@@ -105,6 +113,10 @@ async function initPage(){
                 <h2>${data.lapTrinh[0].name || "Thành viên thứ 1"}</h2>
                 <p>Trưởng ban lập trình</p>
             </div>
+            <div class="social">                    
+                <a target="_blank" rel="noopener noreferrer" href="${data.lapTrinh[0].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.lapTrinh[0].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
+            </div>
         </div>
         <div class="box">
             <div class="img">
@@ -113,6 +125,10 @@ async function initPage(){
             <div class="info">
                 <h2>${data.lapTrinh[1].name || "Thành viên thứ 2"}</h2>
                 <p>Phó ban lập trình</p>
+            </div>
+            <div class="social">
+                <a target="_blank" rel="noopener noreferrer" href="${data.lapTrinh[1].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.lapTrinh[1].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
         `
@@ -127,6 +143,10 @@ async function initPage(){
                 <h2>${data.hauCan[0].name || "Thành viên thứ 1"}</h2>
                 <p>Trưởng ban hậu cần</p>
             </div>
+            <div class="social">
+                <a target="_blank" rel="noopener noreferrer" href="${data.hauCan[0].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.hauCan[0].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
+            </div>
         </div>
         <div class="box">
             <div class="img">
@@ -135,6 +155,10 @@ async function initPage(){
             <div class="info">
                 <h2>${data.hauCan[1].name || "Thành viên thứ 2"}</h2>
                 <p>Phó ban hậu cần</p>
+            </div>
+            <div class="social">
+                <a target="_blank" rel="noopener noreferrer" href="${data.hauCan[1].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.hauCan[1].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
         `
@@ -149,6 +173,10 @@ async function initPage(){
                 <h2>${data.truyenThong[0].name || "Thành viên thứ 1"}</h2>
                 <p>Trưởng ban truyền thông</p>
             </div>
+            <div class="social">
+                <a target="_blank" rel="noopener noreferrer" href="${data.truyenThong[0].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.truyenThong[0].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
+            </div>
         </div>
         <div class="box">
             <div class="img">
@@ -157,6 +185,11 @@ async function initPage(){
             <div class="info">
                 <h2>${data.truyenThong[1].name || "Thành viên thứ 2"}</h2>
                 <p>Phó ban truyền thông</p>
+            </div>
+            <div class="social">
+            
+                <a target="_blank" rel="noopener noreferrer" href="${data.truyenThong[1].fb || "#"}"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:${data.truyenThong[1].email || "#"}"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
         `
@@ -219,3 +252,46 @@ function chunkString(str, chunkSize) {
     }
     return result;
 }
+
+// Slide
+
+const img_number = 15;
+
+function initCommonSlider() {
+    const commonSlider = document.querySelector('#wd_common');
+    if (!commonSlider) return;
+    for (let i = 0; i < img_number; i++) {
+        const imgPath = `/src/asset/image/common/slide_${i}.jpg`;
+        const slideDiv = document.createElement('div');
+        slideDiv.className = 'slide can_open';
+        const img = document.createElement('img');
+        img.src = imgPath;
+        slideDiv.appendChild(img);
+        commonSlider.appendChild(slideDiv);
+        
+    }
+}
+
+
+function initEffect(class_name) {
+    const effect_boxs = document.querySelectorAll(`.${class_name}`)
+    effect_boxs.forEach((e,i)=>{
+        const items = e.querySelectorAll("div")
+        const n = items.length
+        let index = 0
+        items[index].classList.add("active")
+        setInterval(()=>{
+            items[index].classList.remove("active")
+            index = (index+1)%n
+            items[index].classList.add("active")
+        },1500)
+    })
+}
+
+
+initPage();
+initQA();
+runCaption();
+initGyroEvent()
+initCommonSlider()
+initEffect("effect")

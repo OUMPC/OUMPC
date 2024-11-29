@@ -67,190 +67,67 @@
     box-sizing: border-box;
 }
 
-
-#container{
-    background-color: rgb(6, 24, 42);
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
+.sence{
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #111111;
 }
 
-.underline{
-    border-bottom: rgb(255, 118, 5) 2px solid;
+.tb{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+.tb span{
+    color: rgb(178, 178, 178);
+}
+
+.tb h2{
     color: rgb(255, 118, 5);
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-top: 8px;
     margin-bottom: 16px;
-    width: 50%;
+    border-bottom: rgb(255, 118, 5) 2px solid;
 }
 
-.info {
-    width: 90%;
-    text-align: center;
+.tb p {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.slider .slides {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10%;
+    transition: transform 0.5s ease-in-out;
 }
-
-.item{
-    display: flex;
-    margin-top: 20px;
+.slider .slide {
+    min-width: 100%;
+    box-sizing: border-box;
 }
-
-.img img{
-    width: 85%;
-    border-radius: 5px;
-    height: 80%;
-}
-
-.item_info{
-    color: white;
-    text-align: justify;
-    margin-left: -40px;
-}
-
-/* thanh tuu */
-
-#achie_detail{
-    display: flex;
-    flex-basis: 33.3333%;
-    gap: 20px;
-}
-
-.info_container{
-    background-color: rgb(247, 106, 6);
-    border-radius: 10px;
-    height: 80%;
-    margin-top: 10px;
-    margin-bottom: 70px;
-}
-
-.info_container img{
-    width: 93%;
-    margin-top: 3%;
-    border-radius: 5px;
-}
-
-.info_detail{
-    text-align: left;
-    padding-left: 3%;
-    color: white;
-    font-size: 1.5em;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.font_Nunito{
-    font-family: 'Nunito, sans-serif';
-    font-weight: bold;
-}
-
-.info_detail p:last-child{
-    padding-bottom: 10px;
-    font-size: 1em;
-}
-
-/* thanh vien */
-.member-container{
-    display: flex;
-    gap: 30px;
-    /* flex-basis: 33.3333%; */
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-.info_container{
-    transition: width 0.5s, height 0.5s, transform 0.8s;
-}
-
-.icon_arrow{
-    font-size: 3.2em;
-    color: white;
+.slider .slide img {
+    width: 100%;
     display: block;
-    font-weight: 900;
-    margin-top: -50px;
 }
-
-.change_size{
-    width: 22%;
+.slider .nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
 }
-
-.member-container .info_container:nth-child(3){
-    width: 30%;
-}
-
-.member-container .info_container:nth-child(2), .member-container .info_container:nth-child(4){
-    opacity: .7;
-}
-
-
-@media  only screen and (max-width:768px) {
-    /* reponsive history */
-    .item{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .item_info{
-        text-align: left;
-        width: 80%;
-        margin-bottom: 70px;
-    }
-    .item img{
-        margin-bottom: 10px;
-    }
-
-    /* reponsive Typical Members */
-    .member-container .info_container.change_size:nth-child(2), 
-    .member-container .info_container.change_size:nth-child(4){
-        display: none;
-    }
-    .member-container .info_container:nth-child(3){
-        width: 100%;
-    }
-    .info_container
-    {
-        width: 100%;
-    }
-    .icon_arrow{
-        margin-top: 0px;
-    }
-    .info_detail{
-        display: block;
-    }
-    /* .info_container.change_size{
-        animation: slideRight 0.5s ease-out forwards;
-    } */
-
-    /* reponsive achievement */
-    #achie_detail{
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 100px;
-    }
-    .info_container{
-        margin-bottom: 10px;
-    }
-}
-
-@keyframes slideLeft {
-    0%{
-        transform: translateX(50%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideRight {
-    0%{
-        transform: translateX(-50%);
-    }
-    100%{
-        transform: translateX(0);
-    }
+.slider .nav button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
 }
